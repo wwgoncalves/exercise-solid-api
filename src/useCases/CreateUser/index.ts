@@ -1,10 +1,10 @@
 import { MailtrapMailProvider } from "../../providers/implementations/MailtrapMailProvider";
-import { FakePostgresUsersRepository } from "../../repositories/implementations/FakePostgresUsersRepository";
+import { InMemoryUsersRepository } from "../../repositories/implementations/InMemoryUsersRepository";
 import { CreateUserController } from "./CreateUserController";
 import { CreateUserUseCase } from "./CreateUserUseCase";
 
 const mailtrapMailProvider = new MailtrapMailProvider();
-const fakePostgresUsersRepository = new FakePostgresUsersRepository();
+const fakePostgresUsersRepository = new InMemoryUsersRepository();
 
 const createUserUseCase = new CreateUserUseCase(
   fakePostgresUsersRepository,
