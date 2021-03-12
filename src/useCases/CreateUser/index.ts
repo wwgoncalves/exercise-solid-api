@@ -4,10 +4,10 @@ import { CreateUserController } from "./CreateUserController";
 import { CreateUserUseCase } from "./CreateUserUseCase";
 
 const mailtrapMailProvider = new MailtrapMailProvider();
-const fakePostgresUsersRepository = new InMemoryUsersRepository();
+const inMemoryUsersRepository = new InMemoryUsersRepository();
 
 const createUserUseCase = new CreateUserUseCase(
-  fakePostgresUsersRepository,
+  inMemoryUsersRepository,
   mailtrapMailProvider
 );
 
